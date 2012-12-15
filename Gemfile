@@ -14,4 +14,5 @@ gem 'jquery-rails'
 group :test do
   gem 'cucumber-rails'
   gem 'database_cleaner'
+  gem 'rspec-rails'
 end
