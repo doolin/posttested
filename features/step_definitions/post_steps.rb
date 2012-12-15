@@ -1,13 +1,17 @@
-Given /^current user is signed in$/ do  pending # express the regexp above with the code you wish you had
+Given /^current user is signed in$/ do  
+	@user = User.new 
 end
 
 Given /^is on the post creation page$/ do
-    pending # express the regexp above with the code you wish you had
+    visit new_post_path 
 end
 
 When /^the user publishes a post$/ do
-    pending # express the regexp above with the code you wish you had
+    @post = Post.create(title: "TODO", author: "user@example.com", date_published: "12/15/12", content:"making a test")
+    click_button "Create Post"
 end
+
 Then /^the user is shown the new post$/ do
-    pending # express the regexp above with the code you wish you had
+	visit post_path(@post.id)
+	page.should have_content "user@example.com"   
 end
